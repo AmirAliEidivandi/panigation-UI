@@ -9,6 +9,7 @@ function createPagination(totalPages, page) {
     let active;
     let beforePage = page - 1;
     let afterPage = page + 1;
+    
     if (page > 1) {
         liTag += `<li class="btn prev" onclick="createPagination(totalPages, ${page - 1})"><span><i class="fas fa-angle-left"></i> Prev</span></li>`;
     }
@@ -25,6 +26,7 @@ function createPagination(totalPages, page) {
     } else if (page == totalPages - 1) {
         beforePage = beforePage - 1;
     }
+    
     if (page == 1) {
         afterPage = afterPage + 2;
     } else if (page == 2) {
@@ -35,9 +37,11 @@ function createPagination(totalPages, page) {
         if (plength > totalPages) {
             continue;
         }
+        
         if (plength == 0) {
             plength = plength + 1;
         }
+        
         if (page == plength) {
             active = "active";
         } else {
